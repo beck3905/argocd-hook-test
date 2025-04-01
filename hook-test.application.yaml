@@ -24,4 +24,3 @@ spec:
       - ServerSideApply=true
       - Prune=true
       - CreateNamespace=true
-      - SkipDryRunOnMissingResource=true
