@@ -11,7 +11,7 @@ spec:
   project: hook-test
 
   source:
-    repoURL: git@github.com:beck3905/argocd-hook-test.git
+    repoURL: https://github.com/beck3905/argocd-hook-test.git
     targetRevision: main
     path: chart
 
