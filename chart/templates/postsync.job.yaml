@@ -4,9 +4,8 @@ kind: Job
 metadata:
   name: postsync-job
   annotations:
-    "argocd.argoproj.io/hook": PostSync
-    "argocd.argoproj.io/hook-delete-policy": BeforeHookCreation
-    "argocd.argoproj.io/sync-options": SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
 spec:
   template:
     spec:

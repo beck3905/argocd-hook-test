@@ -14,4 +14,4 @@ spec:
       namespace: "*"
       server: https://kubernetes.default.svc
   sourceRepos:
-    - git@github.com:beck3905/argocd-hook-test.git
+    - https://github.com/beck3905/argocd-hook-test.git
