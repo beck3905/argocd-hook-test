@@ -1,0 +1,17 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: hook-test
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  description: hook-test applications
+  destinations:
+    - name: "*"
+      namespace: "*"
+      server: https://kubernetes.default.svc
+  sourceRepos:
+    - git@github.com:beck3905/argocd-hook-test.git

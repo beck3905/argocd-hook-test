@@ -1,0 +1,27 @@
+# templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: delayed-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: delayed-app
+  template:
+    metadata:
+      labels:
+        app: delayed-app
+    spec:
+      containers:
+        - name: app
+          image: busybox
+          command: ["sh", "-c", "echo Starting up... && sleep 30 && echo Ready && sleep 3600"]
+          readinessProbe:
+            exec:
+                command:
+                - sh
+                - -c
+                - "pgrep sleep"
+            initialDelaySeconds: 5
+            periodSeconds: 5

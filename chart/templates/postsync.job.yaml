@@ -1,0 +1,16 @@
+# templates/postsync-job.yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: postsync-job
+  annotations:
+    "argocd.argoproj.io/hook": PostSync
+    "argocd.argoproj.io/hook-delete-policy": HookSucceeded
+spec:
+  template:
+    spec:
+      containers:
+        - name: postsync
+          image: busybox
+          command: ["sh", "-c", "echo PostSync hook executed! && sleep 5"]
+      restartPolicy: Never
